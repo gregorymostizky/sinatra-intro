@@ -25,7 +25,6 @@ class MyTest < Test::Unit::TestCase
     post '/report/test/ok'
     get '/'
     assert last_response.body =~ /test(.*)ok/
-
   end
 
 end
