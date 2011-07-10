@@ -1,0 +1,14 @@
+<link href='/monitor.css' rel="stylesheet">
+
+<h1>Simple Monitoring Application Demo</h1>
+<p>You have made <%= @seen %> requests </p>
+
+<h2>Current Servers</h2>
+<% @servers.each do |server, statuses| %>
+    <% last_status = statuses.last[1] %>
+    <p><a href="/server/<%= server %>"><%= server %></a>
+        : <span class="<%= last_status=='ok' ? 'ok' : 'error' %>"><%= last_status %></span></p>
+<% end %>
+
+<h2>CSV Report</h2>
+<a href="/all.csv">Download report</a>
