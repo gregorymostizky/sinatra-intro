@@ -1,0 +1,7 @@
+<h1>Simple Monitoring Application Demo</h1>
+<p>You have made <%= @seen %> requests </p>
+
+<h2>Current Servers</h2>
+<% @servers.each do |server, statuses| %>
+    <p><%= server %> : <%= statuses.last[1] %> </p>
+<% end %>

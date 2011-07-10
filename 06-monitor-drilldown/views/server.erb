@@ -1,0 +1,13 @@
+<link href='/monitor.css' rel="stylesheet">
+
+<h1>Simple Monitoring Application Demo</h1>
+<p>You have made <%= @seen %> requests </p>
+
+<h2><%= @server %> History </h2>
+<% @statuses.each do |ts, status| %>
+    <p>
+        <%= ts %>
+        ---
+        <span class="<%= status=='ok' ? 'ok' : 'error' %>"><%= status %></span>
+    </p>
+<% end %>
